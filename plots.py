@@ -19,4 +19,3 @@ def error_change(errors):
     plt.xlabel('Iteration number')
     plt.ylabel('MSE')
 
-    plt.show()

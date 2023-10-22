@@ -26,9 +26,9 @@ def no_regulation(func):
 
 
 
-def stohastic_gsd(X, Y, eta=1e-4, reg=0,  regulator=lambda l,w: 0):
+def stohastic_gsd(X, Y, eta=0.01, max_iter = 1e3, reg=0,  regulator=lambda l,w: 0):
     # инициализируем начальный вектор весов
-    w = np.ones(X.shape[1])
+    w = np.zeros(X.shape[1])
 
     # список векторов весов после каждой итерации
     w_list = [w.copy()]
@@ -39,7 +39,6 @@ def stohastic_gsd(X, Y, eta=1e-4, reg=0,  regulator=lambda l,w: 0):
 
 
     # максимальное число итераций
-    max_iter = 1e3
 
     # критерий сходимости (разница весов, при которой алгоритм останавливается)
     min_weight_dist = 1e-8
@@ -55,23 +54,22 @@ def stohastic_gsd(X, Y, eta=1e-4, reg=0,  regulator=lambda l,w: 0):
     while weight_dist > min_weight_dist and iter_num < max_iter:
     
         # генерируем случайный индекс объекта выборки
-        i = np.random.randint(X.shape[0], size=1)[0]
-        l = 1 #Y[i].shape[0]
+        i = np.random.randint(X.shape[0], size=1)
+        l = Y[i].shape[0] #Y[i].shape[0]
     
         y_pred = np.dot(X[i], w)
 
         y_change = y_pred - Y[i]
         dQi = 2/l * np.dot(X[i].T, y_change)
         dRegi = regulator(reg, [w])
-        print("DREGI IS", dRegi)
 
         new_w = w - eta * (dQi + dRegi) # making a step with regulation
         
         weight_dist = np.linalg.norm(new_w - w, ord=2)
-        print(dQi)
         weights_change.append(weight_dist)
         
-        error = calc_mse(Y, y_pred)
+        error = mse(X, new_w, Y)
+
         
         w_list.append(new_w.copy())
         errors.append(error)
@@ -89,11 +87,11 @@ def stohastic_gsd(X, Y, eta=1e-4, reg=0,  regulator=lambda l,w: 0):
     return(w_list, weights_change,  errors)
 
 
-def gsd(X, y, eta=1e-3, reg=0, regulator=lambda reg, w: 0):
+def gsd(X, y, eta=1e-3, max_iter=1e3, reg=0, regulator=lambda reg, w: 0):
     
-    n_iter = 1e3
+    max_iter = 1e3
     
-    epsilon = 1e-4
+    epsilon = 1e-8
     
     w_change = 100000
     
@@ -106,7 +104,7 @@ def gsd(X, y, eta=1e-3, reg=0, regulator=lambda reg, w: 0):
     weights_change = []
     weights = []
 
-    while w_change > epsilon and i < n_iter: # Движение градиентного спуска до тех пор пока не наступит сходимость или не превысется количество итераций
+    while w_change > epsilon and i < max_iter: # Движение градиентного спуска до тех пор пока не наступит сходимость или не превысется количество итераций
         y_pred = X @ W
         
         err = calc_mse(y, y_pred)
@@ -135,7 +133,7 @@ def gsd(X, y, eta=1e-3, reg=0, regulator=lambda reg, w: 0):
         i+=1
 
         #print(w_change > epsilon)
-        #print(i < n_iter)
+        #print(i < max_iter)
         #print(w_change , epsilon)
     return(weights, weights_change, errors)
     
