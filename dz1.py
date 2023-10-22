@@ -95,10 +95,12 @@ weight_change = []
 while w_change > epsilon and i < n_iter: # Движение градиентного спуска до тех пор пока не наступит сходимость или не превысется количество итераций
     print(i)
     y_pred = X @ W
+
     err = calc_mse(y, y_pred)
     err_mae = calc_mae(y, y_pred)
     errors.append(err)
     errors_mae.append(err_mae)
+
     w_old = W.copy()
     #for k in range(W.shape[0]):
     #    W[k] -= eta * (1/n * 2 * X[:, k] @ (y_pred - y))

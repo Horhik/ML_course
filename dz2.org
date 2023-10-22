@@ -1,0 +1,51 @@
+* Домашнее задание
+
+    
+** Напишите функцию наподобие gradient_descent_reg_l2, но для применения L1-регуляризации.
+
+$L_{1}$-Регуляризация
+$||W_{i}|| = \sum \limits ^{d}_{i}|w_{i}|$
+$\frac{d}{dW}||W_{I}|| = \sum\limits^{d}_{i}\frac{w}{|w|}}$
+
+#+begin_src python
+def gradient_descent_reg_l1(X, y, iterations, eta=1e-4, reg=1e-8):
+    W = np.random.randn(X.shape[1])
+    n = X.shape[0]
+    
+    for i in range(0, iterations):
+        y_pred = np.dot(X, W)
+        err = calc_mse(y, y_pred)
+        
+        dQ = 2/n * X.T @ (y_pred - y) # градиент функции ошибки
+        dReg = reg*sum(W/abs(W)) # градиент регуляризации
+        
+        W -= eta * (dQ + dReg)
+        
+        if i % (iterations / 10) == 0:
+            print(f'Iter: {i}, weights: {W}, error {err}')
+    
+    print(f'Final MSE: {calc_mse(y, np.dot(X, W))}')
+    return W
+#+end_src
+
+** Можно ли к одному и тому же признаку применить сразу и нормализацию, и стандартизацию?
+$\mathbb{M} = min_j(x_i^j)$
+$\mathcal{M} = max_j(x_i^j)$
+
+$$x^{j}_{i} = {\frac{x^{j}_{i} - \mathbb{M}}{\mathcal{M}-\mathbb{M}}}$$
+
+$$\mu_{j} = \frac{1}{l}\sum^{l}_{i=1}x^{j}_{i}$$
+
+$$\mu'_{j} = \frac{1}{l}\sum^{l}_{i=1}{\frac{x^{j}_{i} - \mathbb{M}}{\mathcal{M}-\mathbb{M}}}$$
+
+и стандартное отклонение, которое находится путем суммирования квадратов отклонения значений признака на объектах выборки от среднего $\mu_{j}$ и делением на число объектов выборки с последующим извлечением корня:
+
+$$\sigma'_{j} = \sqrt{\frac{1}{l}\sum^{l}_{i=1}\big{(}{\frac{x^{j}_{i} - \mathbb{M}}{\mathcal{M}-\mathbb{M}}}-\frac{1}{l}\sum^{l}_{i=1}{\frac{x^{j}_{i} - \mathbb{M}}{\mathcal{M}-\mathbb{M}}}\big{)}^{2}}$$
+
+$$\sigma_{j} = \sqrt{\frac{1}{l}\sum^{l}_{i=1}(x^{j}_{i}-\mu_{j})^{2}}$$
+
+Чтобы отмасштабировать признак, каждое его значение преобразуется по формуле
+
+$$x^{j}_{i}=\frac{x^{j}_{i} - \mu_{j}}{\sigma_{j}}.$$
+** Сгенерируйте датасет при помощи sklearn.datasets.make_regression и обучите линейную модель при помощи градиентного и стохастического градиентного спуска. Нанесите среднеквадратичную ошибку для обоих методов на один график, сделайте выводы о разнице скорости сходимости каждого из методов.
+

@@ -6,6 +6,7 @@ pkgs.stdenv.mkDerivation {
   buildInputs = with pkgs; [
     python3
     python310Packages.matplotlib
+    python310Packages.scikit-learn
     python310Packages.numpy
     python310Packages.scipy
     python310Packages.jupyterlab
