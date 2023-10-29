@@ -1,0 +1,57 @@
+[I 11:25:05.015 NotebookApp] Serving notebooks from local directory: /space/Code/University/ml
+[I 11:25:05.015 NotebookApp] Jupyter Notebook 6.5.2 is running at:
+[I 11:25:05.015 NotebookApp] http://localhost:8888/?token=21963e953699df9056f8388331abea21fbf0c1b5db4a7439
+[I 11:25:05.015 NotebookApp]  or http://127.0.0.1:8888/?token=21963e953699df9056f8388331abea21fbf0c1b5db4a7439
+[I 11:25:05.015 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 11:25:05.205 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///home/horhik/.local/share/jupyter/runtime/nbserver-41228-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=21963e953699df9056f8388331abea21fbf0c1b5db4a7439
+     or http://127.0.0.1:8888/?token=21963e953699df9056f8388331abea21fbf0c1b5db4a7439
+[I 11:25:17.020 NotebookApp] 302 GET /?token=21963e953699df9056f8388331abea21fbf0c1b5db4a7439 (127.0.0.1) 1.430000ms
+[W 11:25:29.509 NotebookApp] Notebook dzs/dz3/Ex_3.ipynb is not trusted
+[W 11:25:29.554 NotebookApp] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20231027112504 (127.0.0.1) 14.640000ms referer=http://localhost:8888/notebooks/dzs/dz3/Ex_3.ipynb
+[I 11:25:29.811 NotebookApp] 302 GET /notebooks/dzs/dz3/log_reg.png (127.0.0.1) 1.690000ms
+[I 11:25:29.924 NotebookApp] 302 GET /notebooks/dzs/dz3/log_reg_m.png (127.0.0.1) 1.580000ms
+[I 11:25:30.852 NotebookApp] 302 GET /notebooks/dzs/dz3/maximum_likelihood.png (127.0.0.1) 1.850000ms
+[I 11:25:32.027 NotebookApp] 302 GET /notebooks/dzs/dz3/prec_vs_recall.png (127.0.0.1) 2.400000ms
+[I 11:25:33.716 NotebookApp] Kernel started: 460ad35c-04ca-4724-a041-f2745601d3a1, name: python3
+[W 11:25:34.681 NotebookApp] 404 GET /notebooks/dzs/dz3/images/scoring.png (127.0.0.1): file or directory does not exist: 'dzs/dz3/images/scoring.png'
+[W 11:25:34.683 NotebookApp] 404 GET /notebooks/dzs/dz3/images/scoring.png (127.0.0.1) 2.390000ms referer=http://localhost:8888/notebooks/dzs/dz3/Ex_3.ipynb
+[IPKernelApp] WARNING | debugpy_stream undefined, debugging will not be enabled
+[W 11:25:40.420 NotebookApp] 404 GET /static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf (127.0.0.1) 3.260000ms referer=http://localhost:8888/notebooks/dzs/dz3/Ex_3.ipynb
+[I 11:27:33.668 NotebookApp] Saving file at /dzs/dz3/Ex_3.ipynb
+[W 11:27:33.671 NotebookApp] Notebook dzs/dz3/Ex_3.ipynb is not trusted
+[W 11:34:14.941 NotebookApp] Notebook dzs/dz4/Ex_4.ipynb is not trusted
+[W 11:34:14.970 NotebookApp] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20231027112504 (127.0.0.1) 10.080000ms referer=http://localhost:8888/notebooks/dzs/dz4/Ex_4.ipynb
+[I 11:34:15.336 NotebookApp] 302 GET /notebooks/dzs/dz4/L4_graphviz.png (127.0.0.1) 1.630000ms
+[I 11:34:16.147 NotebookApp] 302 GET /notebooks/dzs/dz4/entropy.png (127.0.0.1) 1.900000ms
+[I 11:34:19.118 NotebookApp] Kernel started: 8074e67d-64fd-4bba-85a1-96ded04a077c, name: python3
+[IPKernelApp] WARNING | debugpy_stream undefined, debugging will not be enabled
+[W 11:34:21.610 NotebookApp] Notebook dzs/dz4/trees.ipynb is not trusted
+[I 11:34:23.233 NotebookApp] Kernel started: 06ba3851-060d-417f-b357-f1b2fd2b7b15, name: python3
+[IPKernelApp] WARNING | debugpy_stream undefined, debugging will not be enabled
+[W 11:34:27.745 NotebookApp] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20231027112504 (127.0.0.1) 2.430000ms referer=http://localhost:8888/notebooks/dzs/dz4/trees.ipynb
+[W 11:34:30.443 NotebookApp] Notebook dzs/dz3/Ex_3.ipynb is not trusted
+[I 11:34:30.854 NotebookApp] 302 GET /notebooks/dzs/dz3/log_reg.png (127.0.0.1) 3.820000ms
+[I 11:34:30.962 NotebookApp] 302 GET /notebooks/dzs/dz3/log_reg_m.png (127.0.0.1) 2.200000ms
+[I 11:34:32.075 NotebookApp] 302 GET /notebooks/dzs/dz3/maximum_likelihood.png (127.0.0.1) 1.650000ms
+[I 11:34:33.260 NotebookApp] 302 GET /notebooks/dzs/dz3/prec_vs_recall.png (127.0.0.1) 1.670000ms
+[W 11:34:36.428 NotebookApp] 404 GET /static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf (127.0.0.1) 2.990000ms referer=http://localhost:8888/notebooks/dzs/dz4/Ex_4.ipynb
+[W 11:34:38.019 NotebookApp] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20231027112504 (127.0.0.1) 2.030000ms referer=http://localhost:8888/notebooks/dzs/dz3/Ex_3.ipynb
+[W 11:34:59.411 NotebookApp] 404 GET /notebooks/dzs/dz3/images/scoring.png (127.0.0.1): file or directory does not exist: 'dzs/dz3/images/scoring.png'
+[W 11:34:59.412 NotebookApp] 404 GET /notebooks/dzs/dz3/images/scoring.png (127.0.0.1) 2.200000ms referer=http://localhost:8888/notebooks/dzs/dz3/Ex_3.ipynb
+[W 11:35:31.950 NotebookApp] 404 GET /static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf (127.0.0.1) 2.240000ms referer=http://localhost:8888/notebooks/dzs/dz3/Ex_3.ipynb
+[I 11:36:19.554 NotebookApp] Saving file at /dzs/dz4/Ex_4.ipynb
+[W 11:36:19.557 NotebookApp] Notebook dzs/dz4/Ex_4.ipynb is not trusted
+[I 11:36:24.053 NotebookApp] Saving file at /dzs/dz4/trees.ipynb
+[W 11:36:24.054 NotebookApp] Notebook dzs/dz4/trees.ipynb is not trusted
+[I 11:42:35.126 NotebookApp] Saving file at /dzs/dz3/Ex_3.ipynb
+[W 11:42:35.128 NotebookApp] Notebook dzs/dz3/Ex_3.ipynb is not trusted
+[I 11:43:59.886 NotebookApp] Saving file at /dzs/dz3/Ex_3.ipynb
+[W 11:43:59.911 NotebookApp] Notebook dzs/dz3/Ex_3.ipynb is not trusted
+[I 14:08:07.299 NotebookApp] Saving file at /dzs/dz3/Ex_3.ipynb
+[W 14:08:07.314 NotebookApp] Notebook dzs/dz3/Ex_3.ipynb is not trusted
+[I 14:18:00.193 NotebookApp] Starting buffering for 06ba3851-060d-417f-b357-f1b2fd2b7b15:fdf550e9d9134120817137c898b38e64

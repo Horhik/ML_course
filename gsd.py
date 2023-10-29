@@ -1,5 +1,5 @@
 import numpy as np
-from errors import mse, calc_mse
+from errors import mse, calc_mse, log_loss, sigmoid
 import matplotlib.pyplot as plt
 
 
@@ -145,3 +145,44 @@ stohastic_gsd_l2 = dl2_regulation(stohastic_gsd)
 
 gsd_l1 = dl1_regulation(gsd)
 gsd_l2 = dl2_regulation(gsd)
+
+
+def optimize(w, X, y, n_iterations, eta):
+    # потери будем записывать в список для отображения в виде графика
+    losses = []
+    
+    for i in range(n_iterations):        
+        loss, grad = log_loss(w, X, y)
+        w = w - eta * grad
+
+        losses.append(loss)
+        
+    return w, losses
+
+def predict(w, X):
+    
+    m = X.shape[0]
+    
+    y_predicted = np.zeros(m)
+
+    A = np.squeeze(sigmoid(np.dot(X, w)))
+
+    # За порог отнесения к тому или иному классу примем вероятность 0.5
+    for i in range(A.shape[0]):
+        if (A[i] > 0.5): 
+            y_predicted[i] = 1
+        elif (A[i] <= 0.5):
+            y_predicted[i] = 0
+
+    return y_predicted
+
+
+def make_gsd(X, Y, N, eta):
+  w0 = np.zeros(X.shape[1])
+  w, losses = optimize(w0, X, Y, N, eta)
+  y_predicted = predict(w, X)
+  train_accuracy = np.mean(y_predicted == Y) * 100.0
+
+
+  return (y_predicted, w, losses, train_accuracy)
+  
