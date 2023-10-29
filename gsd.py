@@ -1,6 +1,18 @@
 import numpy as np
-from errors import mse, calc_mse, log_loss, sigmoid
+from errors import mse, calc_mse, log_loss, sigmoid, log_loss_sum
 import matplotlib.pyplot as plt
+
+def normalize(X):
+    return (X - X.min()) / (X.max() - X.min())
+
+def standartize(X):
+    l =  X.shape[1]
+    mu = 1/l * np.sum(X)
+    sig = np.sqrt(1/l * sum(X - mu)**2)
+    sX = (X - mu)/sig
+    return sX
+
+
 
 
 
@@ -186,3 +198,29 @@ def make_gsd(X, Y, N, eta):
 
   return (y_predicted, w, losses, train_accuracy)
   
+def eval_model(X, Y, N=1000, eta=1e-4, logging_on = True):
+
+    np.random.seed(42)
+    W = np.random.randn(X.shape[1])
+    n = X.shape[0]
+    losses = []
+    wlist = []
+
+    for i in range(N):
+      y_pred = sigmoid(np.dot(X, W))
+
+      loss = log_loss_sum(Y, y_pred)
+      dQ = (X.T @ (y_pred - Y))/n
+
+      losses.append(loss)
+      W -= eta * dQ
+      wlist.append(W.copy())
+
+
+      # Logging
+
+      if i % (N / 10) == 0 and logging_on:
+        print("Iteration : ",i, " \n Weigths are:  W", " \n current error is: ", loss)
+    return (W, losses,wlist)
+
+

@@ -54,6 +54,6 @@ n3.hist(X_norm[:,3], label="initial", color=colors[3])
 for ax in fig.get_axes():
     ax.label_outer()
 
-plt.show()
+#plt.show()
 
-stohastic_gsd(X, y)
+#stohastic_gsd(X, y)

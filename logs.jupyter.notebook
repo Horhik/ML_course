@@ -55,3 +55,14 @@
 [I 14:08:07.299 NotebookApp] Saving file at /dzs/dz3/Ex_3.ipynb
 [W 14:08:07.314 NotebookApp] Notebook dzs/dz3/Ex_3.ipynb is not trusted
 [I 14:18:00.193 NotebookApp] Starting buffering for 06ba3851-060d-417f-b357-f1b2fd2b7b15:fdf550e9d9134120817137c898b38e64
+[I 14:46:08.450 NotebookApp] Saving file at /dzs/dz3/Ex_3.ipynb
+[W 14:46:08.452 NotebookApp] Notebook dzs/dz3/Ex_3.ipynb is not trusted
+[I 15:10:08.457 NotebookApp] Saving file at /dzs/dz3/Ex_3.ipynb
+[W 15:10:08.459 NotebookApp] Notebook dzs/dz3/Ex_3.ipynb is not trusted
+[W 16:43:51.772 NotebookApp] Notebook ex2/Ex_2.ipynb is not trusted
+[W 16:43:51.797 NotebookApp] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20231027112504 (127.0.0.1) 9.010000ms referer=http://localhost:8888/notebooks/ex2/Ex_2.ipynb
+[I 16:43:51.995 NotebookApp] 302 GET /notebooks/ex2/L2_normalization.png (127.0.0.1) 1.750000ms
+[I 16:43:52.320 NotebookApp] 302 GET /notebooks/ex2/compare_gd_sgd.png (127.0.0.1) 1.600000ms
+[I 16:43:53.844 NotebookApp] 302 GET /notebooks/ex2/compare_l1_l2_2.png (127.0.0.1) 1.550000ms
+[I 16:43:54.825 NotebookApp] Kernel started: dd5e12d3-b88e-44d8-b135-b7952e786032, name: python3
+[IPKernelApp] WARNING | debugpy_stream undefined, debugging will not be enabled
