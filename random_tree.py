@@ -154,9 +154,17 @@ def train(number_of_trees=[1, 5, 10, 50, 100], colors_list=[['lightcoral', 'ligh
         mesh_predictions = np.array(tree_vote(forest, data)).reshape(xx.shape)
         plt.pcolormesh(xx, yy, mesh_predictions, cmap = light_colors)
         plt.scatter(train_data[:, 0], train_data[:, 1], c = train_labels, cmap = colors)
-        plt.title(f'Train accuracy={train_accuracy:.2f}')
+        plt.title(f'Train accuracy={train_accuracy:.2f}, number of trees ={n_trees} ')
+        plt.show()
 
-    plt.show()
+        xx, yy = get_meshgrid(test_data)
+        data = np.c_[xx.ravel(), yy.ravel()]
+        mesh_predictions = np.array(tree_vote(forest, data)).reshape(xx.shape)
+        plt.pcolormesh(xx, yy, mesh_predictions, cmap = light_colors)
+        plt.scatter(test_data[:, 0], test_data[:, 1], c = test_labels, cmap = colors )
+        plt.title(f'Test accuracy={test_accuracy:.2f}, number of trees ={n_trees} ')
+        plt.show()
+
 '''
 
         # график тестовой выборки
@@ -175,4 +183,3 @@ train()
 
 #TODO Сделать выводы о получаемой сложности гиперплоскости и недообучении или переобучении случайного леса в зависимости от количества деревьев в нем.
 
-#TODO Заменить в реализованном алгоритме проверку с помощью отложенной выборки на Out-of-Bag.
