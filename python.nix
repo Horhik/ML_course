@@ -10,6 +10,11 @@ pkgs.stdenv.mkDerivation {
     python310Packages.numpy
     python310Packages.scipy
     python310Packages.jupyterlab
+    python310Packages.pip
+    python310Packages.pandas
+    python310Packages.sympy
+
+    
   ];
   shellHook = ''
     # Make sure the GR package is installed in the current project
@@ -24,7 +29,9 @@ pkgs.stdenv.mkDerivation {
     stdenv.cc.cc.lib
   ]}" \
      /home/horhik/.julia/artifacts/13488323454a8a92411d5d627bb0f85b9b4c7006/bin/gksqt
+    python -m pip install orgparse
 '';
+
 }
 
 # /home/user/${julia}/packages/GR/cRdXQ/deps/gr/bin/gksqt

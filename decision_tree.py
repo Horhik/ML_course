@@ -23,6 +23,8 @@ class Node:
         self.t = t  # значение порога
         self.true_branch = true_branch  # поддерево, удовлетворяющее условию в узле
         self.false_branch = false_branch  # поддерево, не удовлетворяющее условию в узле
+        self.bootstraped_data = []
+        self.oob = 0
 
 
 class Leaf:
@@ -228,6 +230,7 @@ def get_meshgrid(data, step=.05, border=1.2):
     y_min, y_max = data[:, 1].min() - border, data[:, 1].max() + border
     return np.meshgrid(np.arange(x_min, x_max, step), np.arange(y_min, y_max, step))
 
+'''
 # сгенерируем данные
 classification_data, classification_labels = make_classification(n_features=2, n_informative=2, 
                                                                  n_classes=2, n_redundant=0,
@@ -278,3 +281,4 @@ plt.scatter(test_data[:, 0], test_data[:, 1], c = test_labels, cmap = colors)
 plt.title(f'Test accuracy={test_accuracy:.2f}')
 
 plt.show()
+'''
